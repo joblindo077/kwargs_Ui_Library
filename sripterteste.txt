@@ -1,0 +1,100 @@
+abaixo estara lib da nossa ui                                                                                            loadstring(game:HttpGet("https://raw.githubusercontent.com/7yhx/kwargs_Ui_Library/main/source.lua"))()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7yhx/kwargs_Ui_Library/main/source.lua"))()
+
+local UI = Lib:Create{
+    Theme = "Dark", -- or any other theme
+    Size = UDim2.new(0, 555, 0, 400) -- default
+ 
+ local Main = UI:Tab{
+    Name = "inicio"
+
+    local Divider = Main:Divider{
+        Name = "inicio shit"                                                                   
+            
+        local QuitDivider = Main:Divider{
+            Name = "sair"
+                                                                           -- Script ESP básico para jogos
+-- Este script exibe a posição de todos os jogadores na tela
+
+function main()
+    while true do
+        for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+            if player ~= game:GetService("Players").LocalPlayer then
+                local playerCharacter = player.Character
+                if playerCharacter then
+                    local playerPosition = playerCharacter:WaitForChild("HumanoidRootPart").Position
+                    print(player.Name .. " está em: " .. tostring(playerPosition))
+                end
+            end
+        end
+        wait(1) -- Atualiza a cada segundo
+    end
+end
+
+-- Chama a função principal
+main()
+-- Script com Aimbot básico para jogos
+-- Este script automaticamente mira nos inimigos
+
+local aimbotEnabled = true -- Ative ou desative o aimbot conforme necessário
+
+function main()
+    while aimbotEnabled do
+        local enemies = GetEnemies() -- Função para obter uma lista de inimigos
+        if #enemies > 0 then
+            local closestEnemy = FindClosestEnemy(enemies) -- Função para encontrar o inimigo mais próximo
+            if closestEnemy then
+                AimAt(closestEnemy) -- Função para mirar no inimigo
+            end
+        end
+        wait(0.1) -- Ajuste o intervalo de atualização conforme necessário
+    end
+end
+
+function GetEnemies()
+    -- Implemente a lógica para obter uma lista de inimigos
+    -- Por exemplo, usando a API do jogo ou verificando objetos no cenário
+    -- Retorne uma tabela com os inimigos encontrados
+end
+
+function FindClosestEnemy(enemies)
+    -- Implemente a lógica para encontrar o inimigo mais próximo
+    -- Calcule a distância entre o jogador e cada inimigo
+    -- Retorne o inimigo mais próximo
+end
+
+function AimAt(enemy)
+    -- Implemente a lógica para mirar no inimigo
+    -- Por exemplo, ajustando a posição da mira ou câmera
+end
+
+-- Chame a função principal
+main()
+-- Script com FOV básico para jogos
+-- Este script exibe apenas os objetos dentro do campo de visão
+
+local fov = require 'fov'
+
+-- Função para verificar se uma célula é transparente (não bloqueia a visão)
+function isTransparent(x, y)
+    -- Implemente a lógica para verificar se a célula é transparente
+    -- Por exemplo, verifique se há uma parede ou objeto obstruindo a visão
+    return true
+end
+
+-- Função chamada quando uma célula está visível
+function onVisible(x, y)
+    -- Implemente a lógica para lidar com objetos visíveis
+    -- Por exemplo, marque inimigos ou itens no minimapa
+end
+
+-- Configurações do FOV
+local radius = 5 -- raio de visão
+local px, py = 0, 0 -- posição do jogador
+
+-- Calcula o FOV
+fov(px, py, radius, isTransparent, onVisible)
+
+-- Lembre-se de adaptar essas funções às suas necessidades e ao jogo específico.
+-- Você também pode ajustar o raio, ângulo de início e permissividade conforme necessário.
